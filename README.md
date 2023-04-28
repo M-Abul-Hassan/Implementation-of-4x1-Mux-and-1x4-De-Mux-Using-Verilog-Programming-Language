@@ -79,11 +79,15 @@ endmodule
 
 
 
-## Hardware Implementation On NEXYS 4(Artix 7)
+## Hardware Implementation On NEXYS 4(Artix-7 Power)
 
 ![WhatsApp Image 2023-04-28 at 10 20 23 AM](https://user-images.githubusercontent.com/118730309/235071152-9788071e-e3c3-446f-99a1-7b697cd8f40f.jpeg)
 
 
+![WhatsApp Image 2023-04-28 at 10 21 01 AM](https://user-images.githubusercontent.com/118730309/235071377-4e738fb4-71b4-4cf2-89fd-8a3447b4f6ba.jpeg)
+
+
+![WhatsApp Image 2023-04-28 at 10 21 48 AM](https://user-images.githubusercontent.com/118730309/235071399-e6bf4026-6721-47c2-8dad-f4cc418d9049.jpeg)
 
 
 
