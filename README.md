@@ -6,27 +6,6 @@ FPGA Board (DIGILENT NEXYS 4) Artix - 7
 
 ## Program Code:
 
-`timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 04/28/2023 09:19:53 AM
-// Design Name: 
-// Module Name: mux
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
 
 module mux(Y,I0,I1,I2,I3,S0,S1);
 input I0,I1,I2,I3,S0,S1;
@@ -58,4 +37,49 @@ endmodule
 ## Timing diagram:
 
 ![image](https://user-images.githubusercontent.com/118730309/235057659-0c8958f1-7ca5-4684-b94a-50f8ab822b26.png)
+
+
+
+
+## Demux
+
+![image](https://user-images.githubusercontent.com/118730309/235059302-49ef3c84-12e2-4483-87a6-de18ec14338b.png)
+
+
+
+## Demux Program Code
+
+module Demux(I0,I1,I2,I3,Y,S0,S1);
+input Y,S0,S1;
+output I0,I1,I2,I3;
+
+reg I0,I1,I2,I3;
+always@(*)
+begin
+case({S0,S1})
+2'd0:{I0,I1,I2,I3}={Y,3'd0};
+2'd1:{I0,I1,I2,I3}={1'd0,Y,2'd0};
+2'd2:{I0,I1,I2,I3}={2'd0,Y,1'd0};
+2'd3:{I0,I1,I2,I3}={3'd0,Y};
+
+default:$display("invalid");
+endcase
+end
+endmodule
+
+
+## Timing Diagram
+
+![image](https://user-images.githubusercontent.com/118730309/235059363-fa2021ae-50be-4ef5-9078-3515fe79b3b0.png)
+  
+
+
+
+
+
+
+
+
+
+
 
