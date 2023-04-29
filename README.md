@@ -7,18 +7,18 @@ FPGA Board (DIGILENT NEXYS 4) Artix - 7
 ## Program Code:
 
 
-module mux(Y,I0,I1,I2,I3,S0,S1);
-input I0,I1,I2,I3,S0,S1;
-output Y;
-reg Y;
-always@(*)
-begin
-case({S0,S1})
-2'd0:Y=I0;
-2'd1:Y=I1;
-2'd2:Y=I2;
-2'd3:Y=I3;
-default:$display("invalid");
+module mux(Y,I0,I1,I2,I3,S0,S1);  <br>
+input I0,I1,I2,I3,S0,S1;   <br>
+output Y;  
+reg Y;  
+always@(*)  
+begin  
+case({S0,S1})  
+2'd0:Y=I0;  
+2'd1:Y=I1;  
+2'd2:Y=I2;  
+2'd3:Y=I3;  
+default:$display("invalid");  
 endcase
 end
 endmodule
