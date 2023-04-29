@@ -38,7 +38,7 @@ endmodule
 
 ![image](https://user-images.githubusercontent.com/118730309/235057659-0c8958f1-7ca5-4684-b94a-50f8ab822b26.png)
 
-## Setting for hardware input out put
+## Setting for hardware input output
 
 ![image](https://user-images.githubusercontent.com/118730309/235061810-011fea75-8dc3-4204-99ab-523773575ae4.png)
 
