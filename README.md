@@ -6,7 +6,7 @@ FPGA Board (DIGILENT NEXYS 4) Artix - 7
 
 ## Program Code:
 
-
+### Mux
 module mux(Y,I0,I1,I2,I3,S0,S1);  <br>
 input I0,I1,I2,I3,S0,S1;   <br>
 output Y;  
@@ -19,9 +19,9 @@ case({S0,S1})
 2'd2:Y=I2;  
 2'd3:Y=I3;  
 default:$display("invalid");  
-endcase
-end
-endmodule
+endcase    
+end    
+endmodule    
 
 
 
@@ -51,24 +51,24 @@ endmodule
 
 
 ## Demux Program Code
+### DeMux
+module Demux(I0,I1,I2,I3,Y,S0,S1);  
+input Y,S0,S1;  
+output I0,I1,I2,I3;  
 
-module Demux(I0,I1,I2,I3,Y,S0,S1);
-input Y,S0,S1;
-output I0,I1,I2,I3;
+reg I0,I1,I2,I3;  
+always@(*)  
+begin  
+case({S0,S1})  
+2'd0:{I0,I1,I2,I3}={Y,3'd0};  
+2'd1:{I0,I1,I2,I3}={1'd0,Y,2'd0};  
+2'd2:{I0,I1,I2,I3}={2'd0,Y,1'd0};  
+2'd3:{I0,I1,I2,I3}={3'd0,Y};  
 
-reg I0,I1,I2,I3;
-always@(*)
-begin
-case({S0,S1})
-2'd0:{I0,I1,I2,I3}={Y,3'd0};
-2'd1:{I0,I1,I2,I3}={1'd0,Y,2'd0};
-2'd2:{I0,I1,I2,I3}={2'd0,Y,1'd0};
-2'd3:{I0,I1,I2,I3}={3'd0,Y};
-
-default:$display("invalid");
-endcase
-end
-endmodule
+default:$display("invalid");  
+endcase  
+end  
+endmodule  
 
 
 ## Timing Diagram
