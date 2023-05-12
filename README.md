@@ -70,6 +70,26 @@ endcase
 end  
 endmodule  
 
+## Extra 1x8 demux code
+
+module Demux_1x8(input Y, input [2:0] S, output [7:0] I);
+  reg [7:0] I;
+  
+  always @(*) begin
+    case (S)
+      3'b000: I = {Y, 7'b0000000};
+      3'b001: I = {1'b0, Y, 6'b000000};
+      3'b010: I = {2'b00, Y, 5'b00000};
+      3'b011: I = {3'b000, Y, 4'b0000};
+      3'b100: I = {4'b0000, Y, 3'b000};
+      3'b101: I = {5'b00000, Y, 2'b00};
+      3'b110: I = {6'b000000, Y, 1'b0};
+      3'b111: I = {7'b0000000, Y};
+      default: I = 8'b0;
+    endcase
+  end
+endmodule
+
 
 ## Timing Diagram
 
