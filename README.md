@@ -8,6 +8,7 @@ FPGA Board (DIGILENT NEXYS 4) Artix - 7
 
 ### Mux
 
+
 module mux(Y,I0,I1,I2,I3,S0,S1);  <br>
 input I0,I1,I2,I3,S0,S1;   <br>
 output Y;  
